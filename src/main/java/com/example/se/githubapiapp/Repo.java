@@ -8,24 +8,37 @@ import java.util.Date;
 public class Repo {
 
     private String id;
-
     private String name;
-
     private String privacy;
-
     private Owner owner;
-
     private String html_url;
-
     private String description;
-
     private Date created_at;
-
     private Date updated_at;
-
     private String language;
-
     private String license;
+    private int forks;
+    private int size;
+    private boolean isPrivate;
+
+    public Repo() {
+    }
+
+    public Repo(String id, String name, String privacy, Owner owner, String html_url, String description, Date created_at, Date updated_at, String language, String license, int forks, int size, boolean isPrivate) {
+        this.id = id;
+        this.name = name;
+        this.privacy = privacy;
+        this.owner = owner;
+        this.html_url = html_url;
+        this.description = description;
+        this.created_at = created_at;
+        this.updated_at = updated_at;
+        this.language = language;
+        this.license = license;
+        this.forks = forks;
+        this.size = size;
+        this.isPrivate = isPrivate;
+    }
 
     public String getId() {
         return id;
@@ -107,25 +120,34 @@ public class Repo {
         this.license = license;
     }
 
-    public Repo(){}
+    public int getForks() {
+        return forks;
+    }
 
-    public Repo(String id, String name, String privacy, Owner owner, String html_url, String description, Date created_at, Date updated_at, String language, String license) {
-        this.id = id;
-        this.name = name;
-        this.privacy = privacy;
-        this.owner = owner;
-        this.html_url = html_url;
-        this.description = description;
-        this.created_at = created_at;
-        this.updated_at = updated_at;
-        this.language = language;
-        this.license = license;
+    public void setForks(int forks) {
+        this.forks = forks;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public boolean isPrivate() {
+        return isPrivate;
+    }
+
+    public void setPrivate(boolean aPrivate) {
+        isPrivate = aPrivate;
     }
 
     @Override
     public String toString() {
         return "Repo{" +
-                "id=" + id +
+                "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", privacy='" + privacy + '\'' +
                 ", owner=" + owner +
@@ -135,6 +157,9 @@ public class Repo {
                 ", updated_at=" + updated_at +
                 ", language='" + language + '\'' +
                 ", license='" + license + '\'' +
+                ", forks=" + forks +
+                ", size=" + size +
+                ", isPrivate=" + isPrivate +
                 '}';
     }
 }
